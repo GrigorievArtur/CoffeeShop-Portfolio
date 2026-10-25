@@ -1,0 +1,107 @@
+/* =========================================
+   GALLERY — coffee photo band between hero and reservation
+   ========================================= */
+
+.gallery-section {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 4rem 4rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: start;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    aspect-ratio: 3 / 4;
+    background: #1a0f07;
+    border: 1px solid rgba(254, 243, 226, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 30px 60px -18px rgba(0, 0, 0, 0.9),
+                0 18px 36px -24px rgba(0, 0, 0, 0.8);
+}
+
+/* Editorial stagger */
+.gallery-item:nth-child(2) { margin-top: 3.25rem; }
+.gallery-item:nth-child(3) { margin-top: 1rem; }
+.gallery-item:nth-child(4) { margin-top: 4rem; }
+.gallery-item:nth-child(5) { margin-top: 2rem; }
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+        rgba(26, 15, 7, 0) 55%,
+        rgba(26, 15, 7, 0.38) 100%);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.92) contrast(1.03);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+    filter: saturate(1.05) contrast(1.05);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1100px) {
+    .gallery-section {
+        padding: 2rem 2rem 6rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .gallery-item:nth-child(n) {
+        margin-top: 0;
+    }
+
+    .gallery-item:nth-child(2) { margin-top: 2.5rem; }
+    .gallery-item:nth-child(3) { margin-top: 1rem; }
+    .gallery-item:nth-child(4) { margin-top: 0; }
+    .gallery-item:nth-child(5) { margin-top: 2.5rem; }
+}
+
+@media (max-width: 700px) {
+    .gallery-section {
+        padding: 1.5rem 1rem 5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+    }
+
+    .gallery-item:nth-child(n) {
+        margin-top: 0;
+    }
+
+    .gallery-item:nth-child(even) {
+        margin-top: 2rem;
+    }
+
+    .gallery-item:last-child {
+        grid-column: span 2;
+        aspect-ratio: 16 / 10;
+        margin-top: 0;
+    }
+}

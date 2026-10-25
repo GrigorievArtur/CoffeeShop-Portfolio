@@ -23,8 +23,7 @@ window.GoodDays.parallax = (function () {
             waveFront.style.transform = `translateY(${scrollY * 0.3}px)`;
         }
 
-        // Clear the bands away as the reservation section takes over,
-        // leaving only the beans behind the glass.
+        // Fade the bands out as you scroll, leaving only the beans behind.
         if (wrapper) {
             const fade = Math.max(0, 1 - scrollY / (window.innerHeight * 0.75));
             wrapper.style.opacity = fade.toFixed(3);

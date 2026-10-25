@@ -7,13 +7,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/canvas.css">
     <link rel="stylesheet" href="css/waves.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/collage.css">
+    <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="css/reservation.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -111,84 +112,92 @@
 
     </div>
 
+    <!-- ================= COFFEE GALLERY ================= -->
+    <section class="gallery-section" id="gallery" aria-label="Coffee gallery">
+        <div class="gallery-grid">
+            <figure class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=900&auto=format&fit=crop" alt="Espresso pouring into a cup" loading="lazy">
+            </figure>
+            <figure class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=900&auto=format&fit=crop" alt="Coffee beans beside a cup" loading="lazy">
+            </figure>
+            <figure class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?q=80&w=900&auto=format&fit=crop" alt="Barista pouring latte art" loading="lazy">
+            </figure>
+            <figure class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=900&auto=format&fit=crop" alt="Iced coffee on a table" loading="lazy">
+            </figure>
+            <figure class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=900&auto=format&fit=crop" alt="Cafe counter and espresso machine" loading="lazy">
+            </figure>
+        </div>
+    </section>
+
     <!-- ================= RESERVATION ================= -->
     <section class="reserve-section" id="reserve">
 
         <div class="reserve-bar">
             <a class="reserve-logo" href="#home">Good Days Coffee</a>
-            <a class="reserve-back" href="#home">← Back to home</a>
+            <a class="reserve-back" href="#home">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19 12H5"></path>
+                    <path d="m11 18-6-6 6-6"></path>
+                </svg>
+                <span>Back to home</span>
+            </a>
         </div>
 
         <div class="reserve-container">
 
-            <!-- COLUMN 1 · LEGEND + CONTACT -->
-            <aside class="legend-panel">
-                <h2>Legend</h2>
+            <!-- LEFT · VISIT DETAILS -->
+            <aside class="reserve-intro">
+                <address class="intro-address">
+                    14 Kestrel Lane<br>
+                    Portland, OR 97209
+                </address>
 
-                <ul class="legend">
-                    <li class="legend-item"><span class="legend-dot available"></span> Available</li>
-                    <li class="legend-item"><span class="legend-dot selected"></span> Selected</li>
-                    <li class="legend-item"><span class="legend-dot reserved"></span> Reserved</li>
-                </ul>
-
-                <div class="legend-contact">
-                    <p class="contact-label">Contact</p>
-                    <a class="contact-line" href="tel:+15550123456">+1 (555) 012-3456</a>
-                    <a class="contact-line" href="mailto:reservations@example.com">reservations@example.com</a>
+                <div class="intro-contact">
+                    <a href="tel:+15550123456">+1 (555) 012-3456</a>
+                    <a href="mailto:reservations@example.com">reservations@example.com</a>
                 </div>
+
+                <p class="intro-hours">
+                    Daily <span data-time-range="08:00-20:00">08:00 – 20:00</span><br>
+                    Last seating <span data-time="19:00">19:00</span>
+                </p>
             </aside>
 
-            <!-- COLUMN 2 · FLOOR PLAN + SELECTABLE TABLES -->
-            <div class="floor-plan-wrapper">
-                <!-- Top-down photo of the coffee bar (1024 x 1536) -->
-                <img src="coffeebartopview.png" alt="Top-down floor plan of the coffee bar" class="floor-plan-img">
-
-                <div class="table available t1" data-id="1" data-status="available" role="button" tabindex="0"><span>T1</span></div>
-                <div class="table available t2" data-id="2" data-status="available" role="button" tabindex="0"><span>T2</span></div>
-                <div class="table available t3" data-id="3" data-status="available" role="button" tabindex="0"><span>T3</span></div>
-                <div class="table available t4" data-id="4" data-status="available" role="button" tabindex="0"><span>T4</span></div>
-                <div class="table available t5" data-id="5" data-status="available" role="button" tabindex="0"><span>T5</span></div>
-                <div class="table available t6" data-id="6" data-status="available" role="button" tabindex="0"><span>T6</span></div>
-            </div>
-
-            <!-- COLUMN 3 · BOOKING FORM -->
+            <!-- RIGHT · BOOKING FORM -->
             <aside class="booking-panel">
                 <h2>Reservation</h2>
 
-                <p id="booking-status" class="form-status" role="status" aria-live="polite">Pick a table on the plan to begin.</p>
-
                 <form id="booking-form" class="booking-form" novalidate>
-                    <div class="form-group">
-                        <label for="guest-name">Full Name</label>
-                        <input id="guest-name" type="text" name="name" placeholder="Jane Doe" autocomplete="name" required>
+                    <input type="hidden" name="table" value="any">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guest-name">Full Name</label>
+                            <input id="guest-name" type="text" name="name" placeholder="Jane Doe" autocomplete="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guest-phone">Phone Number</label>
+                            <input id="guest-phone" type="tel" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" required>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="guest-phone">Phone Number</label>
-                        <input id="guest-phone" type="tel" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" required>
-                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-date">Date</label>
+                            <input id="booking-date" type="date" name="date" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="booking-date">Date</label>
-                        <input id="booking-date" type="date" name="date" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="booking-time">Time</label>
-                        <select id="booking-time" name="time" required></select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="booking-table">Table</label>
-                        <select id="booking-table" name="table" required>
-                            <option value="any" selected>Any table</option>
-                            <option value="1">T1 · 4 seats</option>
-                            <option value="2">T2 · 4 seats</option>
-                            <option value="3">T3 · 4 seats</option>
-                            <option value="4">T4 · 4 seats</option>
-                            <option value="5">T5 · 4 seats</option>
-                            <option value="6">T6 · 4 seats</option>
-                        </select>
+                        <div class="form-group">
+                            <label for="booking-time">Time</label>
+                            <input id="booking-time" type="time" name="time"
+                                   min="08:00" max="19:00" step="900" required>
+                            <p class="field-hint">Every 15 minutes, <span data-time-range="08:00-19:00">08:00 – 19:00</span>.</p>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -200,15 +209,9 @@
                             <option value="4">4 People</option>
                         </select>
                     </div>
-
-                    <p class="booking-note">
-                        Reserved tables are held for a short grace period. If your table is still occupied
-                        when you arrive, we may seat you at the next best available table — and we'll call
-                        the number above if anything changes.
-                    </p>
                 </form>
 
-                <button type="submit" form="booking-form" class="btn-submit">Confirm</button>
+                <button type="submit" form="booking-form" class="btn-submit">Confirm Reservation</button>
             </aside>
 
         </div>
@@ -219,26 +222,22 @@
         <div class="footer-inner">
             <div class="footer-brand">
                 <a class="footer-logo" href="#top">Good Days Coffee</a>
-                <p>Slow coffee, warm light, and a seat that waits for you. Roasted in small batches, poured with care.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Visit</h4>
-                <p>14 Kestrel Lane<br>Portland, OR 97209</p>
-            </div>
-            <div class="footer-col">
-                <h4>Hours</h4>
-                <p>Daily 8:00 AM – 8:00 PM<br>Last seating 7:00 PM</p>
-            </div>
-            <div class="footer-col">
-                <h4>More</h4>
-                <a href="#reserve">Reserve a table</a>
+                <p>Slow coffee, warm light, and a seat that waits for you. Roasted in small batches, poured with care.</p>            </div>
+
+            <div class="footer-details">
+                <address>14 Kestrel Lane<br>Portland, OR 97209</address>
                 <a href="tel:+15550123456">+1 (555) 012-3456</a>
-                <a href="admin.html">Staff console</a>
+                <a href="mailto:reservations@example.com">reservations@example.com</a>
             </div>
+
+            <p class="footer-hours">
+                Daily <span data-time-range="08:00-20:00">08:00 – 20:00</span><br>
+                Last seating <span data-time="19:00">19:00</span>
+            </p>
         </div>
+
         <div class="footer-base">
             <span>© 2026 Good Days Coffee</span>
-            <a href="mailto:reservations@example.com">reservations@example.com</a>
         </div>
     </footer>
 
@@ -247,8 +246,6 @@
 
     <script src="js/parallax.js"></script>
     <script src="js/beans.js"></script>
-    <script src="js/booking-core.js"></script>
-    <script src="js/reservation.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

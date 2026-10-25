@@ -128,7 +128,7 @@
     background-color: rgba(42, 26, 14, 0.8);
 }
 
-/* Anchor version of the buttons (e.g. Reserve Table → #reserve) */
+/* Anchor version of a button */
 a.btn {
     display: block;
     text-decoration: none;
