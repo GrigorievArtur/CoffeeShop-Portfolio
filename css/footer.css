@@ -1,0 +1,120 @@
+/* =========================================
+   FOOTER — closing band + staff console entry
+   ========================================= */
+
+.site-footer {
+    position: relative;
+    z-index: 2;
+    padding: 4.5rem clamp(1.25rem, 5vw, 5rem) 2rem;
+    border-top: 1px solid rgba(254, 243, 226, 0.1);
+    background: linear-gradient(180deg, rgba(42, 26, 14, 0), rgba(18, 11, 5, 0.6));
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    display: inline-block;
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+}
+
+.footer-brand p {
+    margin-top: 0.75rem;
+    max-width: 30ch;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: rgba(254, 243, 226, 0.62);
+}
+
+.footer-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244, 174, 82, 0.85);
+    margin-bottom: 0.9rem;
+}
+
+.footer-col p,
+.footer-col a {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: rgba(254, 243, 226, 0.66);
+    text-decoration: none;
+}
+
+.footer-col a {
+    width: fit-content;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-col a:hover,
+.footer-col a:focus-visible {
+    color: var(--amber);
+    border-color: rgba(244, 174, 82, 0.5);
+}
+
+.footer-base {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1180px;
+    margin: 3rem auto 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(254, 243, 226, 0.08);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: rgba(254, 243, 226, 0.4);
+}
+
+.footer-base a {
+    color: rgba(254, 243, 226, 0.55);
+    text-decoration: none;
+}
+
+.footer-base a:hover,
+.footer-base a:focus-visible {
+    color: var(--amber);
+}
+
+@media (max-width: 900px) {
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1.5rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 520px) {
+    .site-footer {
+        padding: 3rem 1.25rem 1.5rem;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-base {
+        margin-top: 2rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Days Coffee</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/canvas.css">
+    <link rel="stylesheet" href="css/waves.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/collage.css">
+    <link rel="stylesheet" href="css/reservation.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- THREE.JS CANVAS -->
+    <div id="canvas-container"></div>
+
+    <!-- PARALLAX & LOOPING WAVES -->
+    <div class="wave-wrapper">
+        <div class="wave-layer-back" id="wave-back">
+            <div class="wave-track">
+                <div class="wave-svg">
+                    <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 260 C 180 260, 180 140, 360 140 C 540 140, 540 260, 720 260 C 900 260, 900 140, 1080 140 C 1260 140, 1260 260, 1440 260 L 1440 400 L 0 400 Z" fill="#D4621A" />
+                    </svg>
+                </div>
+                <div class="wave-svg">
+                    <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 260 C 180 260, 180 140, 360 140 C 540 140, 540 260, 720 260 C 900 260, 900 140, 1080 140 C 1260 140, 1260 260, 1440 260 L 1440 400 L 0 400 Z" fill="#D4621A" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="wave-layer-front" id="wave-front">
+            <div class="wave-track">
+                <div class="wave-svg">
+                    <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 260 C 180 260, 180 170, 360 170 C 540 170, 540 260, 720 260 C 900 260, 900 170, 1080 170 C 1260 170, 1260 260, 1440 260 L 1440 400 L 0 400 Z" fill="#F4AE52" opacity="0.95" />
+                    </svg>
+                </div>
+                <div class="wave-svg">
+                    <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 260 C 180 260, 180 170, 360 170 C 540 170, 540 260, 720 260 C 900 260, 900 170, 1080 170 C 1260 170, 1260 260, 1440 260 L 1440 400 L 0 400 Z" fill="#F4AE52" opacity="0.95" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="hero-container" id="home">
+        
+        <!-- Left: Text & Buttons -->
+        <div class="text-content">
+            <div class="heading-row">
+                <span>Good</span>
+                <span>days</span>
+            </div>
+
+            <div class="heading-row">
+                <div class="text-btn-grid">
+                    <span>start</span>
+                    <span>with a</span>
+                    
+                    <div class="btn-group">
+                        <button class="btn">Order Now</button>
+                        <a class="btn btn-alt" href="#reserve">Reserve Table</a>
+                    </div>
+                </div>
+
+                <div class="inline-stacked">
+                    <div class="inline-stacked-item">
+                        <span class="small">nice</span>
+                        <span class="large">coffee</span>
+                    </div><br>
+                    <div class="inline-stacked-item">
+                        <span class="small">good</span>
+                        <span class="large">coffee</span>
+                    </div><br>
+                    <div class="inline-stacked-item">
+                        <span class="small">tasty</span>
+                        <span class="large">coffee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Professional Collage -->
+        <div class="image-content">
+            <div class="collage-wrapper">
+                <div class="img-container img-1">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" class="collage-img" alt="Coffee cup on wood">
+                </div>
+                <div class="img-container img-2">
+                    <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=800&auto=format&fit=crop" class="collage-img" alt="Coffee cup with beans">
+                </div>
+                <div class="img-container img-3">
+                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800&auto=format&fit=crop" class="collage-img" alt="Coffee cup close up">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= RESERVATION ================= -->
+    <section class="reserve-section" id="reserve">
+
+        <div class="reserve-bar">
+            <a class="reserve-logo" href="#home">Good Days Coffee</a>
+            <a class="reserve-back" href="#home">← Back to home</a>
+        </div>
+
+        <div class="reserve-container">
+
+            <!-- COLUMN 1 · LEGEND + CONTACT -->
+            <aside class="legend-panel">
+                <h2>Legend</h2>
+
+                <ul class="legend">
+                    <li class="legend-item"><span class="legend-dot available"></span> Available</li>
+                    <li class="legend-item"><span class="legend-dot selected"></span> Selected</li>
+                    <li class="legend-item"><span class="legend-dot reserved"></span> Reserved</li>
+                </ul>
+
+                <div class="legend-contact">
+                    <p class="contact-label">Contact</p>
+                    <a class="contact-line" href="tel:+15550123456">+1 (555) 012-3456</a>
+                    <a class="contact-line" href="mailto:reservations@example.com">reservations@example.com</a>
+                </div>
+            </aside>
+
+            <!-- COLUMN 2 · FLOOR PLAN + SELECTABLE TABLES -->
+            <div class="floor-plan-wrapper">
+                <!-- Top-down photo of the coffee bar (1024 x 1536) -->
+                <img src="coffeebartopview.png" alt="Top-down floor plan of the coffee bar" class="floor-plan-img">
+
+                <div class="table available t1" data-id="1" data-status="available" role="button" tabindex="0"><span>T1</span></div>
+                <div class="table available t2" data-id="2" data-status="available" role="button" tabindex="0"><span>T2</span></div>
+                <div class="table available t3" data-id="3" data-status="available" role="button" tabindex="0"><span>T3</span></div>
+                <div class="table available t4" data-id="4" data-status="available" role="button" tabindex="0"><span>T4</span></div>
+                <div class="table available t5" data-id="5" data-status="available" role="button" tabindex="0"><span>T5</span></div>
+                <div class="table available t6" data-id="6" data-status="available" role="button" tabindex="0"><span>T6</span></div>
+            </div>
+
+            <!-- COLUMN 3 · BOOKING FORM -->
+            <aside class="booking-panel">
+                <h2>Reservation</h2>
+
+                <p id="booking-status" class="form-status" role="status" aria-live="polite">Pick a table on the plan to begin.</p>
+
+                <form id="booking-form" class="booking-form" novalidate>
+                    <div class="form-group">
+                        <label for="guest-name">Full Name</label>
+                        <input id="guest-name" type="text" name="name" placeholder="Jane Doe" autocomplete="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guest-phone">Phone Number</label>
+                        <input id="guest-phone" type="tel" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="booking-date">Date</label>
+                        <input id="booking-date" type="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="booking-time">Time</label>
+                        <select id="booking-time" name="time" required></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="booking-table">Table</label>
+                        <select id="booking-table" name="table" required>
+                            <option value="">Select a table</option>
+                            <option value="1">T1 · 4 seats</option>
+                            <option value="2">T2 · 4 seats</option>
+                            <option value="3">T3 · 4 seats</option>
+                            <option value="4">T4 · 4 seats</option>
+                            <option value="5">T5 · 4 seats</option>
+                            <option value="6">T6 · 4 seats</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="booking-guests">Guests</label>
+                        <select id="booking-guests" name="guests" required>
+                            <option value="1">1 Person</option>
+                            <option value="2" selected>2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Confirm</button>
+                </form>
+            </aside>
+
+        </div>
+    </section>
+
+    <!-- THREE.JS LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script src="js/parallax.js"></script>
+    <script src="js/beans.js"></script>
+    <script src="js/reservation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

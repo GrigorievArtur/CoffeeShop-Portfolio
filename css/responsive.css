@@ -1,0 +1,35 @@
+/* =========================================
+   RESPONSIVE — breakpoint overrides
+   ========================================= */
+
+@media (max-width: 1200px) {
+    .hero-container {
+        flex-direction: column;
+        padding-top: 10vh;
+        gap: 4rem;
+    }
+
+    .text-content,
+    .image-content {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .image-content {
+        height: 500px;
+        margin-bottom: 10vh;
+    }
+
+    .text-content {
+        white-space: normal;
+    }
+
+    .heading-row,
+    .text-btn-grid {
+        white-space: normal;
+    }
+
+    .btn-group {
+        align-items: flex-start;
+    }
+}

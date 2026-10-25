@@ -1,0 +1,81 @@
+/* =========================================
+   COLLAGE — layered photo stack (right column)
+   ========================================= */
+
+.image-content {
+    flex: 0 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 650px;
+}
+
+.collage-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+}
+
+.img-container {
+    position: absolute;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.95), 0 18px 36px -18px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(254, 243, 226, 0.1);
+    background: #1a0f07;
+
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.4s ease;
+    will-change: transform, box-shadow, opacity;
+}
+
+/* Fancy Hover Effect */
+.img-container:hover {
+    transform: scale(1.06) rotate(0deg) !important;
+    z-index: 10;
+    box-shadow: 0 40px 80px -12px rgba(0, 0, 0, 1),
+                0 0 40px rgba(244, 174, 82, 0.2); /* Soft amber glow */
+}
+
+/* Dim other images when one is hovered */
+.collage-wrapper:hover .img-container:not(:hover) {
+    opacity: 0.4;
+}
+
+.collage-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Staggered Layout */
+.img-1 {
+    top: 0;
+    left: 0;
+    width: 55%;
+    height: 50%;
+    transform: rotate(-2deg);
+    z-index: 1;
+}
+
+.img-2 {
+    top: 18%;
+    right: 0;
+    width: 50%;
+    height: 45%;
+    transform: rotate(3deg);
+    z-index: 3;
+}
+
+.img-3 {
+    bottom: 0;
+    left: 12%;
+    width: 60%;
+    height: 48%;
+    transform: rotate(-1.5deg);
+    z-index: 2;
+}

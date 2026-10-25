@@ -1,0 +1,35 @@
+/* =========================================
+   BASE — design tokens, reset, page shell
+   ========================================= */
+
+:root {
+    --cream: #FEF3E2;
+    --amber: #F4AE52;
+    --burnt: #D4621A;
+    --espresso: #2A1A0E;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    background-color: var(--espresso);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 150vh;
+}
