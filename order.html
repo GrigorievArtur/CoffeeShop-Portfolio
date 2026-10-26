@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Beans | Good Days Coffee</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body class="order-page">
+
+    <main>
+
+        <section class="order-intro">
+            <div>
+                <h1>Take the good<br>days home.</h1>
+            </div>
+        </section>
+
+        <div class="order-layout">
+
+            <!-- ============ CATALOG ============ -->
+            <section class="catalog" aria-labelledby="catalog-title">
+                <div class="catalog-head">
+                    <h2 id="catalog-title">Choose your beans</h2>
+                </div>
+
+                <div class="product-grid">
+
+                    <!-- 1 -->
+                    <article class="product-card"
+                             data-id="house"
+                             data-name="Kestrel House Blend"
+                             data-roast="Medium roast"
+                             data-price="18">
+                        <div class="product-media">
+                            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=900&auto=format&fit=crop"
+                                 alt="Coffee beans beside a cup" loading="lazy">
+                        </div>
+                        <div class="product-body">
+                            <h3>Kestrel House Blend</h3>
+                            <p class="product-notes">Chocolate, hazelnut, brown sugar</p>
+
+                            <div class="product-controls">
+                                <label class="product-field">
+                                    <span>Size</span>
+                                    <select class="product-size">
+                                        <option value="250 g" data-multiplier="1">250 g</option>
+                                        <option value="500 g" data-multiplier="1.9">500 g</option>
+                                        <option value="1 kg" data-multiplier="3.6">1 kg</option>
+                                    </select>
+                                </label>
+                                <label class="product-field">
+                                    <span>Grind</span>
+                                    <select class="product-grind">
+                                        <option>Whole bean</option>
+                                        <option>Espresso</option>
+                                        <option>Filter</option>
+                                        <option>French press</option>
+                                        <option>Moka pot</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="product-footer">
+                                <span class="product-price">$18.00</span>
+                                <button type="button" class="add-to-order">Add to order</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2 -->
+                    <article class="product-card"
+                             data-id="morning-light"
+                             data-name="Morning Light"
+                             data-roast="Light roast"
+                             data-price="19">
+                        <div class="product-media">
+                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=900&auto=format&fit=crop"
+                                 alt="Light coffee in a ceramic cup" loading="lazy">
+                        </div>
+                        <div class="product-body">
+                            <h3>Morning Light</h3>
+                            <p class="product-notes">Citrus, honey, toasted almond</p>
+
+                            <div class="product-controls">
+                                <label class="product-field">
+                                    <span>Size</span>
+                                    <select class="product-size">
+                                        <option value="250 g" data-multiplier="1">250 g</option>
+                                        <option value="500 g" data-multiplier="1.9">500 g</option>
+                                        <option value="1 kg" data-multiplier="3.6">1 kg</option>
+                                    </select>
+                                </label>
+                                <label class="product-field">
+                                    <span>Grind</span>
+                                    <select class="product-grind">
+                                        <option>Whole bean</option>
+                                        <option>Espresso</option>
+                                        <option>Filter</option>
+                                        <option>French press</option>
+                                        <option>Moka pot</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="product-footer">
+                                <span class="product-price">$19.00</span>
+                                <button type="button" class="add-to-order">Add to order</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3 -->
+                    <article class="product-card"
+                             data-id="midnight"
+                             data-name="Midnight Roast"
+                             data-roast="Dark roast"
+                             data-price="20">
+                        <div class="product-media">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=900&auto=format&fit=crop"
+                                 alt="Espresso pouring into a cup" loading="lazy">
+                        </div>
+                        <div class="product-body">
+                            <h3>Midnight Roast</h3>
+                            <p class="product-notes">Dark cocoa, molasses, cedar</p>
+
+                            <div class="product-controls">
+                                <label class="product-field">
+                                    <span>Size</span>
+                                    <select class="product-size">
+                                        <option value="250 g" data-multiplier="1">250 g</option>
+                                        <option value="500 g" data-multiplier="1.9">500 g</option>
+                                        <option value="1 kg" data-multiplier="3.6">1 kg</option>
+                                    </select>
+                                </label>
+                                <label class="product-field">
+                                    <span>Grind</span>
+                                    <select class="product-grind">
+                                        <option>Whole bean</option>
+                                        <option>Espresso</option>
+                                        <option>Filter</option>
+                                        <option>French press</option>
+                                        <option>Moka pot</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="product-footer">
+                                <span class="product-price">$20.00</span>
+                                <button type="button" class="add-to-order">Add to order</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 4 -->
+                    <article class="product-card"
+                             data-id="guji"
+                             data-name="Ethiopia Guji"
+                             data-roast="Light roast"
+                             data-price="24">
+                        <div class="product-media">
+                            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=900&auto=format&fit=crop"
+                                 alt="Pour-over coffee being brewed" loading="lazy">
+                        </div>
+                        <div class="product-body">
+                            <h3>Ethiopia Guji</h3>
+                            <p class="product-notes">Blueberry, jasmine, lemon zest</p>
+
+                            <div class="product-controls">
+                                <label class="product-field">
+                                    <span>Size</span>
+                                    <select class="product-size">
+                                        <option value="250 g" data-multiplier="1">250 g</option>
+                                        <option value="500 g" data-multiplier="1.9">500 g</option>
+                                        <option value="1 kg" data-multiplier="3.6">1 kg</option>
+                                    </select>
+                                </label>
+                                <label class="product-field">
+                                    <span>Grind</span>
+                                    <select class="product-grind">
+                                        <option>Whole bean</option>
+                                        <option>Espresso</option>
+                                        <option>Filter</option>
+                                        <option>French press</option>
+                                        <option>Moka pot</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="product-footer">
+                                <span class="product-price">$24.00</span>
+                                <button type="button" class="add-to-order">Add to order</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5 -->
+                    <article class="product-card"
+                             data-id="huila"
+                             data-name="Colombia Huila"
+                             data-roast="Medium roast"
+                             data-price="22">
+                        <div class="product-media">
+                            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=900&auto=format&fit=crop"
+                                 alt="Iced coffee on a café table" loading="lazy">
+                        </div>
+                        <div class="product-body">
+                            <h3>Colombia Huila</h3>
+                            <p class="product-notes">Caramel, red apple, cocoa nib</p>
+
+                            <div class="product-controls">
+                                <label class="product-field">
+                                    <span>Size</span>
+                                    <select class="product-size">
+                                        <option value="250 g" data-multiplier="1">250 g</option>
+                                        <option value="500 g" data-multiplier="1.9">500 g</option>
+                                        <option value="1 kg" data-multiplier="3.6">1 kg</option>
+                                    </select>
+                                </label>
+                                <label class="product-field">
+                                    <span>Grind</span>
+                                    <select class="product-grind">
+                                        <option>Whole bean</option>
+                                        <option>Espresso</option>
+                                        <option>Filter</option>
+                                        <option>French press</option>
+                                        <option>Moka pot</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="product-footer">
+                                <span class="product-price">$22.00</span>
+                                <button type="button" class="add-to-order">Add to order</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6 -->
+                    <article class="product-card"
+                             data-id="decaf"
+                             data-name="Decaf Nocturne"
+                             data-roast="Medium-dark roast"
+                             data-price="21">
+                        <div class="product-media">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=900&auto=format&fit=crop"
+                                 alt="Coffee cup on a wooden table" loading="lazy">
+                        </div>
+                        <div class="product-body">
+                            <h3>Decaf Nocturne</h3>
+                            <p class="product-notes">Almond, cocoa, dried fig</p>
+
+                            <div class="product-controls">
+                                <label class="product-field">
+                                    <span>Size</span>
+                                    <select class="product-size">
+                                        <option value="250 g" data-multiplier="1">250 g</option>
+                                        <option value="500 g" data-multiplier="1.9">500 g</option>
+                                        <option value="1 kg" data-multiplier="3.6">1 kg</option>
+                                    </select>
+                                </label>
+                                <label class="product-field">
+                                    <span>Grind</span>
+                                    <select class="product-grind">
+                                        <option>Whole bean</option>
+                                        <option>Espresso</option>
+                                        <option>Filter</option>
+                                        <option>French press</option>
+                                        <option>Moka pot</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="product-footer">
+                                <span class="product-price">$21.00</span>
+                                <button type="button" class="add-to-order">Add to order</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- ============ ORDER PANEL ============ -->
+            <aside class="order-panel" aria-labelledby="order-title">
+                <div class="order-panel-head">
+                    <h2 id="order-title">Your order</h2>
+                    <span class="cart-count" id="cart-count" aria-live="polite">0 items</span>
+                </div>
+
+                <div class="cart-items" id="cart-items">
+                    <p class="cart-empty">Your bag is empty. Add a coffee to get started.</p>
+                </div>
+
+                <div class="cart-totals">
+                    <div class="cart-line">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal">$0.00</span>
+                    </div>
+                    <div class="cart-line">
+                        <span>Pickup</span>
+                        <span>Free</span>
+                    </div>
+                    <div class="cart-line cart-line--total">
+                        <span>Total</span>
+                        <span id="cart-total">$0.00</span>
+                    </div>
+                </div>
+
+                <form id="checkout-form" class="checkout-form" novalidate>
+                    <p id="order-status" class="order-status" role="status" aria-live="polite"></p>
+
+                    <div class="order-row">
+                        <div class="order-field">
+                            <label for="order-name">Name</label>
+                            <input id="order-name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
+                        </div>
+                        <div class="order-field">
+                            <label for="order-phone">Phone</label>
+                            <input id="order-phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                    </div>
+
+                    <div class="order-field">
+                        <label for="order-email">Email</label>
+                        <input id="order-email" name="email" type="email" autocomplete="email" placeholder="jane@example.com" required>
+                    </div>
+
+                    <div class="order-field">
+                        <label for="order-fulfilment">Collection</label>
+                        <select id="order-fulfilment" name="fulfilment">
+                            <option value="pickup">Pick up at the bar (free)</option>
+                            <option value="ship">Ship to me, postage calculated later</option>
+                        </select>
+                    </div>
+
+                    <div class="order-field">
+                        <label for="order-notes">Notes <span>(optional)</span></label>
+                        <textarea id="order-notes" name="notes" rows="2" placeholder="Leave at the door, grind for filter…"></textarea>
+                    </div>
+
+                    <button type="submit" class="order-submit">Place order</button>
+                </form>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- ================= SITE FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a class="footer-logo" href="index.html">Good Days Coffee</a>
+                <p>Slow coffee, warm light, and a seat that waits for you. Roasted in small batches, poured with care.</p>
+            </div>
+
+            <div class="footer-details">
+                <address>14 Kestrel Lane<br>Portland, OR 97209</address>
+                <a href="tel:+15550123456">+1 (555) 012 3456</a>
+                <a href="mailto:reservations@example.com">reservations@example.com</a>
+            </div>
+
+            <p class="footer-hours">
+                Daily <span data-time-range="08:00-20:00">08:00 to 20:00</span><br>
+                Last seating <span data-time="19:00">19:00</span>
+            </p>
+        </div>
+
+        <div class="footer-base">
+            <span>© 2026 Good Days Coffee</span>
+        </div>
+    </footer>
+
+    <script src="js/order.js"></script>
+</body>
+</html>

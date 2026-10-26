@@ -28,7 +28,7 @@
     function initTimes() {
         document.querySelectorAll('[data-time-range]').forEach((el) => {
             const [start, end] = el.dataset.timeRange.split('-');
-            el.textContent = formatTime(start) + ' – ' + formatTime(end);
+            el.textContent = formatTime(start) + ' to ' + formatTime(end);
         });
 
         document.querySelectorAll('[data-time]').forEach((el) => {
