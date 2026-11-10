@@ -279,6 +279,77 @@ test("green strip rolls left seamlessly and respects reduced motion", async ({
   await expect(groups.last()).not.toBeVisible();
 });
 
+test("shop navigation stays visible while scrolling", async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto("/order.html");
+  await page.evaluate(() => document.fonts.ready);
+  const header = page.locator(".site-header");
+  await expect(header).toHaveCSS("position", "sticky");
+  await page.evaluate(() => window.scrollTo(0, 900));
+  await expect
+    .poll(() =>
+      header.evaluate((element) => element.getBoundingClientRect().top),
+    )
+    .toBe(0);
+  await expect(page.getByRole("button", { name: "Your bag" })).toBeInViewport();
+  await page.getByRole("button", { name: "Your bag" }).click();
+  await expect(page.getByRole("dialog")).toBeVisible();
+  await page.getByRole("button", { name: "Close bag" }).click();
+  if (isMobile) {
+    await page.getByRole("button", { name: "Menu", exact: true }).click();
+    await expect(
+      page.getByRole("navigation", { name: "Main navigation" }),
+    ).toBeInViewport();
+  }
+  await page.goto("/order.html#guji");
+  await expect
+    .poll(() =>
+      page
+        .locator("#guji")
+        .evaluate(
+          (card) =>
+            card.getBoundingClientRect().top >=
+            document.querySelector(".site-header").getBoundingClientRect()
+              .bottom,
+        ),
+    )
+    .toBe(true);
+  await page.goto("/");
+  await expect(page.locator(".site-header")).not.toHaveCSS(
+    "position",
+    "sticky",
+  );
+});
+
+test("booking spacing is consistent and small screens stack fields", async ({
+  page,
+}) => {
+  await page.goto("/#reserve");
+  await page.evaluate(() => document.fonts.ready);
+  const panel = page.locator(".reservation");
+  await expect(panel.locator("form")).toHaveCSS("row-gap", "24px");
+  await expect(panel.locator(".booking-schedule")).toHaveCSS("row-gap", "12px");
+  await expect(panel.locator(".booking-actions")).toHaveCSS("row-gap", "16px");
+  await expect(panel.locator("h3")).toHaveCSS("margin-top", "0px");
+  for (const label of await panel.locator("label").all()) {
+    await expect(label).toHaveCSS("margin-bottom", "0px");
+    await expect(label).toHaveCSS("row-gap", "8px");
+  }
+  for (const control of await panel.locator("input, select").all()) {
+    await expect(control).toHaveCSS("min-height", "48px");
+  }
+  await expect(panel.getByLabel("Time", { exact: true })).toHaveAttribute(
+    "aria-describedby",
+    "booking-time-hint",
+  );
+  await page.setViewportSize({ width: 390, height: 844 });
+  const name = await panel.getByLabel("Full name").boundingBox();
+  const phone = await panel.getByLabel("Phone number").boundingBox();
+  expect(phone.y).toBeGreaterThan(name.y + name.height);
+});
+
 test("visible copy avoids slash and dash separators", async ({ page }) => {
   for (const path of ["/", "/order.html"]) {
     await page.goto(path);
