@@ -5,7 +5,9 @@ export default function Header({ children }) {
   const isShop = window.location.pathname.endsWith("order.html");
 
   return (
-    <header className="site-header">
+    <header
+      className={isShop ? "site-header site-header-sticky" : "site-header"}
+    >
       <a className="brand" href="index.html" aria-label="Good Days Coffee home">
         <span className="brand-mark" aria-hidden="true">
           ✳

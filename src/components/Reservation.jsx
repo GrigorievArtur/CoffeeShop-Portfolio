@@ -48,22 +48,28 @@ export default function Reservation() {
             />
           </label>
         </div>
-        <div className="form-row">
-          <label>
-            Date
-            <input name="date" type="date" min={firstDate} required />
-          </label>
-          <label>
-            Time
-            <input
-              name="time"
-              type="time"
-              min="08:00"
-              max="19:00"
-              step="900"
-              required
-            />
-          </label>
+        <div className="booking-schedule">
+          <div className="form-row">
+            <label>
+              Date
+              <input name="date" type="date" min={firstDate} required />
+            </label>
+            <label>
+              Time
+              <input
+                name="time"
+                aria-describedby="booking-time-hint"
+                type="time"
+                min="08:00"
+                max="19:00"
+                step="900"
+                required
+              />
+            </label>
+          </div>
+          <p className="field-hint" id="booking-time-hint">
+            Choose a time every 15 minutes from 8:00 AM to 7:00 PM.
+          </p>
         </div>
         <label>
           Party size
@@ -74,18 +80,17 @@ export default function Reservation() {
             <option value="4">4 people</option>
           </select>
         </label>
-        <p className="field-hint">
-          Choose a time every 15 minutes from 8:00 AM to 7:00 PM.
-        </p>
-        <button className="button" type="submit">
-          Reserve a table <span aria-hidden="true">↗</span>
-        </button>
-        <p className="demo-note">
-          Portfolio demo. No real reservation is made.
-        </p>
-        <p className="form-message" role="status">
-          {message}
-        </p>
+        <div className="booking-actions">
+          <button className="button" type="submit">
+            Reserve a table <span aria-hidden="true">↗</span>
+          </button>
+          <p className="demo-note">
+            Portfolio demo. No real reservation is made.
+          </p>
+          <p className="form-message" role="status">
+            {message}
+          </p>
+        </div>
       </form>
     </div>
   );
