@@ -1,9 +1,10 @@
 export default function Footer() {
+  const basePath = import.meta.env.BASE_URL;
   return (
     <footer className="site-footer">
       <div className="footer-top">
         <div>
-          <a className="brand footer-brand" href="index.html">
+          <a className="brand footer-brand" href={basePath}>
             <span className="brand-mark" aria-hidden="true">
               ✳
             </span>
@@ -12,9 +13,9 @@ export default function Footer() {
         </div>
         <div className="footer-links">
           <h3>Explore</h3>
-          <a href="order.html">Shop coffee</a>
-          <a href="index.html#story">Our story</a>
-          <a href="index.html#reserve">Book a table</a>
+          <a href={basePath + "order.html"}>Shop coffee</a>
+          <a href={basePath + "#story"}>Our story</a>
+          <a href={basePath + "#reserve"}>Book a table</a>
         </div>
         <div className="footer-links">
           <h3>Contact</h3>

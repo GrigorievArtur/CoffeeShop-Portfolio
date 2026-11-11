@@ -27,6 +27,7 @@ function readBag() {
 }
 
 export default function Shop() {
+  const basePath = import.meta.env.BASE_URL;
   const [filter, setFilter] = useState("All coffee");
   const [cart, setCart] = useState(readBag);
 
@@ -85,6 +86,7 @@ export default function Shop() {
             {(filter === "All coffee" || filter === "Medium") && (
               <ProductCard
                 id="house"
+                basePath={basePath}
                 name="Kestrel House Blend"
                 roast="Medium roast"
                 notes="Chocolate, hazelnut, brown sugar"
@@ -96,6 +98,7 @@ export default function Shop() {
             {(filter === "All coffee" || filter === "Light") && (
               <ProductCard
                 id="morning-light"
+                basePath={basePath}
                 name="Morning Light"
                 roast="Light roast"
                 notes="Citrus, honey, toasted almond"
@@ -107,6 +110,7 @@ export default function Shop() {
             {(filter === "All coffee" || filter === "Dark") && (
               <ProductCard
                 id="midnight"
+                basePath={basePath}
                 name="Midnight Roast"
                 roast="Dark roast"
                 notes="Dark cocoa, molasses, cedar"
@@ -118,6 +122,7 @@ export default function Shop() {
             {(filter === "All coffee" || filter === "Light") && (
               <ProductCard
                 id="guji"
+                basePath={basePath}
                 name="Ethiopia Guji"
                 roast="Light roast"
                 notes="Blueberry, jasmine, lemon zest"
@@ -129,6 +134,7 @@ export default function Shop() {
             {(filter === "All coffee" || filter === "Medium") && (
               <ProductCard
                 id="huila"
+                basePath={basePath}
                 name="Colombia Huila"
                 roast="Medium roast"
                 notes="Caramel, red apple, cocoa nib"
@@ -140,6 +146,7 @@ export default function Shop() {
             {(filter === "All coffee" || filter === "Decaf") && (
               <ProductCard
                 id="decaf"
+                basePath={basePath}
                 name="Decaf Nocturne"
                 roast="Decaf roast"
                 notes="Almond, cocoa, dried fig"
@@ -155,7 +162,7 @@ export default function Shop() {
             <h2 id="coffee-help">Not sure where to start?</h2>
             <p>Try our Kestrel House Blend, or stop by the cafe for a cup.</p>
           </div>
-          <a className="button button-white" href="index.html#visit">
+          <a className="button button-white" href={basePath + "#visit"}>
             Visit the cafe <span aria-hidden="true">↗</span>
           </a>
         </section>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function Header({ children }) {
+  const basePath = import.meta.env.BASE_URL;
   const [menuOpen, setMenuOpen] = useState(false);
   const isShop = window.location.pathname.endsWith("order.html");
 
@@ -8,7 +9,7 @@ export default function Header({ children }) {
     <header
       className={isShop ? "site-header site-header-sticky" : "site-header"}
     >
-      <a className="brand" href="index.html" aria-label="Good Days Coffee home">
+      <a className="brand" href={basePath} aria-label="Good Days Coffee home">
         <span className="brand-mark" aria-hidden="true">
           ✳
         </span>
@@ -27,13 +28,16 @@ export default function Header({ children }) {
         className={menuOpen ? "main-nav is-open" : "main-nav"}
         aria-label="Main navigation"
       >
-        <a href="order.html" aria-current={isShop ? "page" : undefined}>
+        <a
+          href={basePath + "order.html"}
+          aria-current={isShop ? "page" : undefined}
+        >
           Our coffee
         </a>
-        <a href="index.html#story" onClick={() => setMenuOpen(false)}>
+        <a href={basePath + "#story"} onClick={() => setMenuOpen(false)}>
           Our story
         </a>
-        <a href="index.html#visit" onClick={() => setMenuOpen(false)}>
+        <a href={basePath + "#visit"} onClick={() => setMenuOpen(false)}>
           Visit us
         </a>
       </nav>

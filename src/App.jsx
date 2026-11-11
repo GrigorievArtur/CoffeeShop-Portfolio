@@ -5,6 +5,7 @@ import Shop from "./components/Shop";
 
 export default function App() {
   const isShop = window.location.pathname.endsWith("order.html");
+  const basePath = import.meta.env.BASE_URL;
 
   return (
     <>
@@ -17,7 +18,7 @@ export default function App() {
         <>
           <Header />
           <main id="main">
-            <Home />
+            <Home basePath={basePath} />
           </main>
         </>
       )}

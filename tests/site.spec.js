@@ -1,5 +1,17 @@
 import { test, expect } from "@playwright/test";
 
+test("production build uses the project path for GitHub Pages", async () => {
+  const home = await (
+    await fetch("http://127.0.0.1:4173/CoffeeShop-Portfolio/")
+  ).text();
+  const shop = await (
+    await fetch("http://127.0.0.1:4173/CoffeeShop-Portfolio/order.html")
+  ).text();
+  expect(home).toContain('src="/CoffeeShop-Portfolio/assets/');
+  expect(home).toContain('href="/CoffeeShop-Portfolio/assets/');
+  expect(shop).toContain('src="/CoffeeShop-Portfolio/assets/');
+});
+
 test("home displays local photos and fonts without page errors", async ({
   page,
 }) => {
@@ -43,7 +55,7 @@ test("navigation reaches the shop and mobile menu works", async ({
 });
 
 test("all roast filters show the right coffees", async ({ page }) => {
-  await page.goto("/order.html");
+  await page.goto("order.html");
   for (const [filter, count] of [
     ["Light", 2],
     ["Medium", 2],
@@ -61,7 +73,7 @@ test("all roast filters show the right coffees", async ({ page }) => {
 test("bag remembers coffee choices, merges matching bags, and changes quantities", async ({
   page,
 }) => {
-  await page.goto("/order.html");
+  await page.goto("order.html");
   const coffee = page.getByRole("article").filter({
     has: page.getByRole("heading", { name: "Kestrel House Blend" }),
   });
@@ -104,7 +116,7 @@ test("bag remembers coffee choices, merges matching bags, and changes quantities
 test("checkout validates fields and clearly reports a demo", async ({
   page,
 }) => {
-  await page.goto("/order.html");
+  await page.goto("order.html");
   await page.getByRole("button", { name: "Add Morning Light to bag" }).click();
   await page.getByRole("button", { name: "Your bag" }).click();
   const bag = page.getByRole("dialog");
@@ -152,7 +164,7 @@ test("reservation validates dates and confirms only a demo", async ({
 });
 
 test("damaged saved bag data does not break the shop", async ({ page }) => {
-  await page.goto("/order.html");
+  await page.goto("order.html");
   await page.evaluate(() =>
     localStorage.setItem("gooddays.order.v1", "not json"),
   );
@@ -183,7 +195,7 @@ test("damaged saved bag data does not break the shop", async ({ page }) => {
 });
 
 test("old saved bags remain usable", async ({ page }) => {
-  await page.goto("/order.html");
+  await page.goto("order.html");
   await page.evaluate(() =>
     localStorage.setItem(
       "gooddays.order.v1",
@@ -211,7 +223,7 @@ test("old saved bags remain usable", async ({ page }) => {
 test("both pages fit narrow and wide screens", async ({ page }) => {
   for (const width of [320, 390, 768, 1280, 1920]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const path of ["/", "/order.html"]) {
+    for (const path of ["", "order.html"]) {
       await page.goto(path);
       expect(
         await page.evaluate(
@@ -223,7 +235,7 @@ test("both pages fit narrow and wide screens", async ({ page }) => {
 });
 
 test("pages have no decorative labels or tiny text", async ({ page }) => {
-  for (const path of ["/", "/order.html"]) {
+  for (const path of ["", "order.html"]) {
     await page.goto(path);
     await expect(
       page.locator(
@@ -283,7 +295,7 @@ test("shop navigation stays visible while scrolling", async ({
   page,
   isMobile,
 }) => {
-  await page.goto("/order.html");
+  await page.goto("order.html");
   await page.evaluate(() => document.fonts.ready);
   const header = page.locator(".site-header");
   await expect(header).toHaveCSS("position", "sticky");
@@ -303,7 +315,7 @@ test("shop navigation stays visible while scrolling", async ({
       page.getByRole("navigation", { name: "Main navigation" }),
     ).toBeInViewport();
   }
-  await page.goto("/order.html#guji");
+  await page.goto("order.html#guji");
   await expect
     .poll(() =>
       page
@@ -351,7 +363,7 @@ test("booking spacing is consistent and small screens stack fields", async ({
 });
 
 test("visible copy avoids slash and dash separators", async ({ page }) => {
-  for (const path of ["/", "/order.html"]) {
+  for (const path of ["", "order.html"]) {
     await page.goto(path);
     expect(await page.locator("body").innerText()).not.toMatch(/[\/—–]/);
   }

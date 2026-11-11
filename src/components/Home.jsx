@@ -1,6 +1,6 @@
 import Reservation from "./Reservation";
 
-export default function Home() {
+export default function Home({ basePath }) {
   return (
     <>
       <section className="hero" id="top">
@@ -14,7 +14,7 @@ export default function Home() {
             Coffee roasted in Portland, served here or brewed at home.
           </p>
           <div className="hero-buttons">
-            <a className="button" href="order.html">
+            <a className="button" href={basePath + "order.html"}>
               Shop coffee <span aria-hidden="true">↗</span>
             </a>
             <a className="text-link" href="#visit">
@@ -24,7 +24,7 @@ export default function Home() {
         </div>
         <div className="hero-photo">
           <img
-            src="/images/brewing.jpg"
+            src={basePath + "images/brewing.jpg"}
             alt="Fresh coffee being carefully brewed into a glass carafe"
             fetchPriority="high"
           />
@@ -56,15 +56,15 @@ export default function Home() {
       >
         <div className="section-heading">
           <h2 id="coffee-heading">Our coffee</h2>
-          <a className="text-link" href="order.html">
+          <a className="text-link" href={basePath + "order.html"}>
             View all coffee <span aria-hidden="true">↗</span>
           </a>
         </div>
         <div className="featured-grid">
-          <a className="featured-coffee" href="order.html#house">
+          <a className="featured-coffee" href={basePath + "order.html#house"}>
             <div className="featured-image">
               <img
-                src="/images/beans.jpg"
+                src={basePath + "images/beans.jpg"}
                 alt="Freshly roasted coffee beans"
                 loading="lazy"
               />
@@ -75,10 +75,13 @@ export default function Home() {
             </div>
             <p>Chocolate, hazelnut, brown sugar</p>
           </a>
-          <a className="featured-coffee" href="order.html#morning-light">
+          <a
+            className="featured-coffee"
+            href={basePath + "order.html#morning-light"}
+          >
             <div className="featured-image">
               <img
-                src="/images/coffee.jpg"
+                src={basePath + "images/coffee.jpg"}
                 alt="Freshly brewed coffee ready to enjoy"
                 loading="lazy"
               />
@@ -89,10 +92,13 @@ export default function Home() {
             </div>
             <p>Citrus, honey, toasted almond</p>
           </a>
-          <a className="featured-coffee" href="order.html#midnight">
+          <a
+            className="featured-coffee"
+            href={basePath + "order.html#midnight"}
+          >
             <div className="featured-image">
               <img
-                src="/images/espresso.jpg"
+                src={basePath + "images/espresso.jpg"}
                 alt="Coffee in ceramic cups"
                 loading="lazy"
               />
@@ -113,7 +119,7 @@ export default function Home() {
       >
         <div className="story-image">
           <img
-            src="/images/cafe.jpg"
+            src={basePath + "images/cafe.jpg"}
             alt="Our cafe with plants, natural light, and space to sit"
             loading="lazy"
           />

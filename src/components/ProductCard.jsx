@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function ProductCard({
+  basePath,
   id,
   name,
   roast,
@@ -33,7 +34,7 @@ export default function ProductCard({
   return (
     <article className="product-card" id={id}>
       <div className="product-image">
-        <img src={image} alt={name + " coffee"} loading="lazy" />
+        <img src={basePath + image} alt={name + " coffee"} loading="lazy" />
       </div>
       <div className="coffee-name">
         <h2>{name}</h2>
